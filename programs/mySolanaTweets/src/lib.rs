@@ -20,7 +20,7 @@ pub mod my_solana_program {
         let tweet = &mut ctx.accounts.tweet;
 
         if !tweet.message.trim().is_empty() {
-            return err!(Error    ::CannotUpdateTweet);
+            return err!(ErrorCode::CannotUpdateTweet);
         }
 
         if message.trim().is_empty() {
@@ -89,7 +89,7 @@ pub struct Tweet {
 
 
 #[error_code]
-pub enum Errors {
+pub enum ErrorCode {
     #[msg("Tweet message cannot be updated")]
     CannotUpdateTweet,
 
