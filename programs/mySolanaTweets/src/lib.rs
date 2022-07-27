@@ -20,7 +20,7 @@ pub mod my_solana_program {
         let tweet = &mut ctx.accounts.tweet;
 
         if !tweet.message.trim().is_empty() {
-            return err!(ErrorCode::CannotUpdateTweet);
+            return err!(Error    ::CannotUpdateTweet);
         }
 
         if message.trim().is_empty() {
@@ -105,8 +105,3 @@ pub enum Errors {
     #[msg("User has already liked the tweet")]
     UserLikedTweet,
 }
-
-
-
-
-
